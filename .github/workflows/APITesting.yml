@@ -7,7 +7,7 @@ on:
 concurrency: production_environment
 
 jobs:
-  postman-tests:
+  postman-tests: 
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout ⚙️
