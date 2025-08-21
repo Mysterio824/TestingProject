@@ -1,0 +1,31 @@
+TestCaseID,Title,Name,DescriptionText,Price,IsLocationOffer,IsRental,ProductImageId,Category,Brand,ER
+TC01,Valid all fields,Product Name,Sample description,99.99,1,0,1,5,2,Status:201
+TC02,Valid with empty description,Product Name,,99.99,1,0,1,5,2,description:The description field must be a string.
+TC03,Valid max length name,ThisNameIsExactlyOneHundredTwentyCharactersLongToTestTheBoundaryConditionOfTheNameFieldWhichShouldAcceptUpToOneHundredTwentyCharsWithoutErro,Sample description,99.99,1,0,1,5,2,Status:201
+TC04,Valid with min price,Product Name,Sample description,0.01,1,0,1,5,2,Status:201
+TC05,Valid with max category,Product Name,Sample description,99.99,1,0,1,12,2,Status:201
+TC06,Valid with max brand,Product Name,Sample description,99.99,1,0,1,5,2,Status:201
+TC07,Valid with max product image id,Product Name,Sample description,99.99,1,0,29,5,2,Status:201
+TC08,Empty all fields,,,,,,,,,name:The name field is required.|description:The description field must be a string.|price:The price field must be a number./The price field is required.|is_location_offer:The is location offer field is required.|is_rental:The is rental field is required.|product_image_id:The product image id field is required.
+TC09,Name too long,ThisNameIsExactlyOneHundredTwentyCharactersLongToTestTheBoundaryConditionOfTheNameFieldWhichShouldAcceptUpToOneHundredTwentyCharsWithoutError1,Sample description,99.99,1,0,1,5,2,name:The name field must not be greater than 120 characters.
+TC10,Price not a number,Product Name,Sample description,invalid,1,0,1,5,2,price:The price field must be a number.
+TC11,IsLocationOffer not boolean,Product Name,Sample description,99.99,invalid,0,1,5,2,is_location_offer:The is location offer field must be true or false.
+TC12,IsRental not boolean,Product Name,Sample description,99.99,1,invalid,1,5,2,is_rental:The is rental field must be true or false.
+TC13,ProductImageId not a number,Product Name,Sample description,99.99,1,0,invalid,5,2,product_image_id:The product image id field must be a number.
+TC14,Category exceeds max,Product Name,Sample description,99.99,1,0,1,14,2,message:Something went wrong
+TC15,Brand exceeds max,Product Name,Sample description,99.99,1,0,1,5,4,message:Something went wrong
+TC16,ProductImageId exceeds max,Product Name,Sample description,99.99,1,0,31,5,2,message:Something went wrong
+TC17,Empty name,,Sample description,99.99,1,0,1,5,2,name:The name field is required.
+TC18,Empty price,Product Name,Sample description,,1,0,1,5,2,price:The price field must be a number./The price field is required.
+TC19,Empty is_location_offer,Product Name,Sample description,99.99,,0,1,5,2,is_location_offer:The is location offer field is required.
+TC20,Empty is_rental,Product Name,Sample description,99.99,1,,1,5,2,is_rental:The is rental field is required.
+TC21,Empty product_image_id,Product Name,Sample description,99.99,1,0,,5,2,product_image_id:The product image id field is required.
+TC22,Description not a string,Product Name,123,99.99,1,0,1,5,2,description:The description field must be a string.
+TC23,Multiple invalid fields,ThisNameIsOneHundredTwentyOneCharactersLongWhichExceedsTheMaximumAllowedLengthForTheNameFieldAndShouldTriggerAnError,123,invalid,invalid,invalid,invalid,5,2,name:The name field must not be greater than 120 characters.|description:The description field must be a string.|price:The price field must be a number.|is_location_offer:The is location offer field must be true or false.|is_rental:The is rental field must be true or false.|product_image_id:The product image id field must be a number.
+TC24,Valid with no description and min category,Product Name,,99.99,1,0,1,1,2,Status:201
+TC25,Valid with no description and min brand,Product Name,,99.99,1,0,1,5,1,Status:201
+TC26,Valid with no description and min product image id,Product Name,,99.99,1,0,1,5,2,Status:201
+TC27,Name too long and price invalid,ThisNameIsOneHundredTwentyOneCharactersLongWhichExceedsTheMaximumAllowedLengthForTheNameFieldAndShouldTriggerAnError,Sample description,invalid,1,0,1,5,2,name:The name field must not be greater than 120 characters.|price:The price field must be a number.
+TC28,Category and brand exceed max,Product Name,Sample description,99.99,1,0,1,14,4,message:Something went wrong
+TC29,All fields invalid except name,Product Name,123,invalid,invalid,invalid,invalid,14,4,description:The description field must be a string.|price:The price field must be a number.|is_location_offer:The is location offer field must be true or false.|is_rental:The is rental field must be true or false.|product_image_id:The product image id field must be a number.|message:Something went wrong
+TC30,Valid with long description,Product Name,ThisDescriptionIsVeryLongAndHasNoMaximumLengthLimitSoItCanBeAsLongAsNeededWithoutTriggeringAnyValidationErrors,99.99,1,0,1,5,2,Status:201

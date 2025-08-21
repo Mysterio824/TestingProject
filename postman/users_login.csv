@@ -1,0 +1,31 @@
+TestCaseID,Title,Email,Password,ER
+TC001,Valid email and valid password,customer@practicesoftwaretesting.com,welcome01,Status:200
+TC002,Valid short email and min length password,customer@practicesoftwaretesting.com,welcome01,Status:200
+TC003,Valid max length email and valid password,customer@practicesoftwaretesting.com,welcome01,Status:200
+TC004,Valid email and max length password,user@example.com,Ab1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cd,Status:200
+TC005,Empty email with valid password,,Passw0rd!,email:The email field is required.
+TC006,Too long email (256 chars) with valid password,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com,Passw0rd!,email:The email field must not be greater than 60 characters.
+TC007,Invalid email format (missing @) with valid password,user.domain.com,Passw0rd!,email:The email field must be a valid email address.
+TC008,Invalid email format (missing domain) with valid password,user@,Passw0rd!,email:The email field must be a valid email address.
+TC009,Invalid email format (missing local part) with valid password,@domain.com,Passw0rd!,email:The email field must be a valid email address.
+TC010,Invalid email with invalid characters,user#name@domain.com,Passw0rd!,email:The email field must be a valid email address.
+TC011,Valid email with empty password,user@example.com,,password:The password field is required.
+TC012,Valid email with too short password (5 chars),user@example.com,Ab1!c,password:The password field must be at least 9 characters.
+TC013,Valid email with too long password (41 chars),user@example.com,P@1pppppppppppppppppppppppppppppppppppppppp,password:The password field must not be greater than 40 characters.
+TC014,Valid email with password missing special char,user@example.com,Password1,password:The password field must contain at least one special character.
+TC015,Valid email with password missing number,user@example.com,Password!,password:The password field must contain at least one number.
+TC016,Valid email with password missing uppercase,user@example.com,password1!,password:The password field must contain at least one uppercase letter.
+TC017,Valid email with password missing lowercase,user@example.com,PASSWORD1!,password:The password field must contain at least one lowercase letter.
+TC018,Empty email and empty password,,,email:The email field is required.|password:The password field is required.
+TC019,Too long email and too short password,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com,Ab1!c,email:The email field must not be greater than 60 characters.|password:The password field must be at least 9 characters.
+TC020,Invalid email (missing @) and password missing special char,user.domain.com,Password1,email:The email field must be a valid email address.|password:The password field must contain at least one special character.
+TC021,Invalid email (missing domain) and password missing number,user@,Password!,email:The email field must be a valid email address.|password:The password field must contain at least one number.
+TC022,Invalid email (missing local part) and password missing uppercase,@domain.com,password1!,email:The email field must be a valid email address.|password:The password field must contain at least one uppercase letter.
+TC023,Invalid email with invalid chars and password missing lowercase,user#name@domain.com,PASSWORD1!,email:The email field must be a valid email address.|password:The password field must contain at least one lowercase letter.
+TC024,Valid short email and too long password,a@b.co,P@1pppppppppppppppppppppppppppppppppppppppp,password:The password field must not be greater than 40 characters.
+TC025,Valid max length email and min length password,customer@practicesoftwaretesting.com,welcome01,Status:200
+TC026,Invalid email (missing @) and too long password,user.domain.com,Ab1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cdAb1!cd,email:The email field must be a valid email address.|password:The password field must not be greater than 40 characters.
+TC027,Valid email and password with special chars only,customer@practicesoftwaretesting.com,welcome01,Status:200
+TC028,Valid Admin login,admin@practicesoftwaretesting.com,welcome01,Status:200
+TC029,Invalid email (no domain extension) and valid password,user@domain,Passw0rd!,email:The email field must be a valid email address.
+TC030,Valid email and password with min requirements,user@example.com,aB1!cd,Status:200
