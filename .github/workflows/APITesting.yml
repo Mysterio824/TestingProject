@@ -21,21 +21,21 @@ jobs:
           newman run postman/HW07.postman_collection.json \
             --folder "Sign-In" \
             --iteration-data postman/users_login.csv \
-            --env-var BASE_API_URL=https://8ce156fd72d6.ngrok-free.app  || echo "Sign-In failed" >> failed_tests.txt
+            --env-var BASE_API_URL=https://3c0c03323717.ngrok-free.app  || echo "Sign-In failed" >> failed_tests.txt
 
       - name: Run Sign-Up tests 👤
         run: |
           newman run postman/HW07.postman_collection.json \
             --folder "Sign-Up" \
             --iteration-data postman/users_signup.csv \
-            --env-var BASE_API_URL=https://8ce156fd72d6.ngrok-free.app  || echo "Sign-Up failed" >> failed_tests.txt
+            --env-var BASE_API_URL=https://3c0c03323717.ngrok-free.app  || echo "Sign-Up failed" >> failed_tests.txt
 
       - name: Run Add-Product tests 📦
         run: |
           newman run postman/HW07.postman_collection.json \
             --folder "Add-Product" \
             --iteration-data postman/products.csv \
-            --env-var BASE_API_URL=https://8ce156fd72d6.ngrok-free.app  || echo "Add-Product failed" >> failed_tests.txt
+            --env-var BASE_API_URL=https://3c0c03323717.ngrok-free.app  || echo "Add-Product failed" >> failed_tests.txt
 
       - name: Check overall result ✅/❌
         run: |
